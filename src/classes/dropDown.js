@@ -6,5 +6,10 @@ export class DropDownMenu {
     constructor (domRef) {
         this.element = domRef
     }
-
+    slideDown () {
+        let target = this.element
+        target.addEventListener('click', () => {
+            target.classlist.toggle('slide');
+        })
+    }
 }
