@@ -1,0 +1,19 @@
+{
+  "name": "drop-down-menu",
+  "version": "0.0.1",
+  "description": "A reusable drop-down menu for web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/am1macdonald/drop-down-menu.git"
+  },
+  "author": "Adam MacDonald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/am1macdonald/drop-down-menu/issues"
+  },
+  "homepage": "https://github.com/am1macdonald/drop-down-menu#readme"
+}
