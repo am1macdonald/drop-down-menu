@@ -1,3 +1,37 @@
+.arrow-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+}
 
+.drop-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: Courier New, Courier, monospace;
+}
+
+.hidden {
+  height: 0px;
+  opacity: 0;
+}
+
+.animate {
+  animation: expand 2s 1 ease-in-out;
+}
+
+@keyframes expand {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: auto;
+    opacity: 1;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
