@@ -1,30 +1,69 @@
-.arrow-down 
-    display: inline-block
-    width: 0
-    height: 0 
-    border-left: 10px solid transparent
-    border-right: 10px solid transparent
-    border-top: 10px solid black
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap')
 
-.drop-down
+.drop-down-container
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
 
-    font-size: 1rem
-    font-family: Courier New, Courier, monospace
+    position: relative
 
-.hidden
-    height: 0px
-    opacity: 0
+    width: 25vw
+    height: 2.5rem
+
+    background-color: purple
 
 
-.animate
-    animation: expand 2s 1 ease-in-out
+    font-size: 2rem
+    font-family: 'Roboto Mono', monospace
+    cursor: pointer
 
-@keyframes expand
+    .drop-down
+        position: absolute
+        top: 100%
+        left: 0%
+        width: 25vw
+        padding: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        perspective: 1000px
+    
+
+        li
+            display: none
+
+            width: 25vw
+            height: 2.2rem
+
+            background-color: rgb(128,128,128)
+            opacity: 0
+
+            font-size: 1.5rem
+            text-transform: uppercase
+            text-align: center
+            line-height: 2.2rem
+            &:hover
+                background-color: rgb(220,220,220)
+        
+    &:hover > .drop-down li
+          display: block
+
+          @for $i from 1 through 6
+            &:nth-child(#{$i})                
+                animation:
+                    name: fade-in
+                    duration: 300ms
+                    delay: (100ms * $i) - 100ms
+                    timing-function: ease-in-out
+                    fill-mode: forwards
+
+@keyframes fade-in
     0%
-        height: 0px
+        opacity: 0
+        transform: rotateY(-90deg) translateY(30px)
     100% 
-        height: auto
         opacity: 1
+        transform: rotateY(0deg) translateY(0px)

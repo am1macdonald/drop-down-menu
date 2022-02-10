@@ -1,36 +1,97 @@
-.arrow-down {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid black;
-}
-
-.drop-down {
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+.drop-down-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  font-family: Courier New, Courier, monospace;
+  position: relative;
+  width: 25vw;
+  height: 2.5rem;
+  background-color: purple;
+  font-size: 2rem;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
 }
-
-.hidden {
-  height: 0px;
+.drop-down-container .drop-down {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 25vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+.drop-down-container .drop-down li {
+  display: none;
+  width: 25vw;
+  height: 2.2rem;
+  background-color: gray;
   opacity: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2.2rem;
+}
+.drop-down-container .drop-down li:hover {
+  background-color: gainsboro;
+}
+.drop-down-container:hover > .drop-down li {
+  display: block;
+}
+.drop-down-container:hover > .drop-down li:nth-child(1) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.drop-down-container:hover > .drop-down li:nth-child(2) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 100ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.drop-down-container:hover > .drop-down li:nth-child(3) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.drop-down-container:hover > .drop-down li:nth-child(4) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.drop-down-container:hover > .drop-down li:nth-child(5) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.drop-down-container:hover > .drop-down li:nth-child(6) {
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
-.animate {
-  animation: expand 2s 1 ease-in-out;
-}
-
-@keyframes expand {
+@keyframes fade-in {
   0% {
-    height: 0px;
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(30px);
   }
   100% {
-    height: auto;
     opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
   }
 }
 
